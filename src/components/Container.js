@@ -7,10 +7,10 @@ class Container extends React.Component {
         super();
         this.state = {
             groceryItems: [
-                { id: 1, title: 'Melk', amount: 1 },
-                { id: 2, title: 'Eieren', amount: 1 },
+                { id: 1, title: 'Milk', amount: 1 },
+                { id: 2, title: 'Eggs', amount: 1 },
                 { id: 3, title: 'Avocado', amount: 1 },
-                { id: 4, title: 'Nasi', amount: 1 },
+                { id: 4, title: 'Rice', amount: 1 },
             ],
             shoppingListItems: [
             ],
@@ -21,7 +21,7 @@ class Container extends React.Component {
     }
 
     handleClickGroceryItem(item) {
-        const winkelmand = this.state.shoppingListItems.map(obj => {
+        const cart = this.state.shoppingListItems.map(obj => {
             if (obj.id === item.id) {
                 obj.amount += 1;
                 return obj;
@@ -29,10 +29,10 @@ class Container extends React.Component {
             return obj;
         });
 
-        const duplicate = winkelmand.filter(obj => obj.id === item.id).length;
-        if (!duplicate) { winkelmand.push(item); }
+        const duplicate = cart.filter(obj => obj.id === item.id).length;
+        if (!duplicate) { cart.push(item); }
 
-        this.setState({ shoppingListItems: winkelmand });
+        this.setState({ shoppingListItems: cart });
     }
 
     emptyCart() {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 function ListItem(props) {
-    const showAmount = props.handleClick ? null : `hoeveelheid: ${props.item.amount}`
+    const showAmount = props.handleClick ? null : `quantity: ${props.item.amount}`
 
     return (<li
         key={props.item.id}
