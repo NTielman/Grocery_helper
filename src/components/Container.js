@@ -7,10 +7,6 @@ class Container extends React.Component {
         super();
         this.state = {
             groceryItems: [
-                { id: 1, title: 'Milk', amount: 1 },
-                { id: 2, title: 'Eggs', amount: 1 },
-                { id: 3, title: 'Avocado', amount: 1 },
-                { id: 4, title: 'Rice', amount: 1 },
             ],
             shoppingListItems: [
             ],
