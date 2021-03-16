@@ -24,7 +24,7 @@ A webapp that keeps track of your groceries list and shopping cart items.
 
 
 ## Live Demo 
-https://pensive-goldberg-0df8f9.netlify.app
+https://hungry-jennings-92ae10.netlify.app
 
 
 ## Usage & Details 
@@ -40,3 +40,4 @@ The goal of this webapp is to facilitate doing the groceries by keeping track of
 * As a user i'd like to be able to edit and remove items from grocery list and shopping cart 
 * As a user i'd like the possibility to manually enter item quantities
 * As a user i'd like an item added to cart to automatically or manually be grayed out from my grocery list 
+* As a user i want the input field to be cleared automatically after i add a new item
