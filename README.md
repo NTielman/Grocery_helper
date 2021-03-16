@@ -30,10 +30,10 @@ https://pensive-goldberg-0df8f9.netlify.app
 ## Usage & Details 
 The goal of this webapp is to facilitate doing the groceries by keeping track of your grocery list as well as tracking the items in your shopping cart. 
 
-To add a new grocery item, fill the item's name in the 'grocery list' top bar and press '+'
-To add an item to your 'shopping cart', tap on the desired grocery list item
-To add multiple items to your cart, tap the desired number of times on the desired grocery list item
-To empty your cart, tap on the 'empty cart' button in the cart's top bar
+* To add a new grocery item, fill the item's name in the 'grocery list' top bar and press '+'
+* To add an item to your 'shopping cart', tap on the desired grocery list item
+* To add multiple items to your cart, tap the desired number of times on the desired grocery list item
+* To empty your cart, tap on the 'empty cart' button in the cart's top bar
 
 
 ## Issues/ Missing Features
