@@ -1,14 +1,16 @@
 import React from 'react';
 
 function InputField(props) {
+
     return (
-        <div className="text-input-container">
+        <form className="form">
             <input
                 placeholder="Add an item..."
                 type="text"
+                className="form__input"
                 id="input-field" />
-            <button className="btn add-btn" onClick={props.addItem}>+</button>
-        </div>);
+            <button className="form__btn" onClick={props.addItem}>+</button>
+        </form>);
 }
 
-export default InputField 
+export default InputField

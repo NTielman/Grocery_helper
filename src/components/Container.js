@@ -6,10 +6,8 @@ class Container extends React.Component {
     constructor() {
         super();
         this.state = {
-            groceryItems: [
-            ],
-            shoppingListItems: [
-            ],
+            groceryItems: [],
+            shoppingListItems: [],
         };
         this.handleClickGroceryItem = this.handleClickGroceryItem.bind(this);
         this.emptyCart = this.emptyCart.bind(this);
@@ -17,36 +15,38 @@ class Container extends React.Component {
     }
 
     handleClickGroceryItem(item) {
-        const cart = this.state.shoppingListItems.map(obj => {
-            if (obj.id === item.id) {
-                obj.amount += 1;
+        this.setState(prevState => {
+            const cart = prevState.shoppingListItems.map(obj => {
+                if (obj.id === item.id) {
+                    return { ...obj, amount: obj.amount + 1 };
+                }
                 return obj;
-            }
-            return obj;
+            });
+            const itemInCart = cart.filter(obj => obj.id === item.id).length;
+            if (!itemInCart) { cart.push(item); }
+            return ({ shoppingListItems: cart });
         });
-
-        const duplicate = cart.filter(obj => obj.id === item.id).length;
-        if (!duplicate) { cart.push(item); }
-
-        this.setState({ shoppingListItems: cart });
     }
 
     emptyCart() {
         this.setState({ shoppingListItems: [] });
     }
 
-    addItem() {
+    addItem(e) {
+        e.preventDefault();
         let userInput = document.getElementById('input-field').value;
-        const itemId = this.state.groceryItems.length + 1;
-        const newItem = { id: itemId, title: userInput, amount: 1 };
+        if (userInput) {
+            const itemId = this.state.groceryItems.length + 1;
+            const newItem = { id: itemId, title: userInput, amount: 1 };
 
-        this.setState(prevState => {
-            const newArray = prevState.groceryItems.map(obj => obj);
-            newArray.push(newItem);
-            return ({ groceryItems: newArray });
+            this.setState(prevState => {
+                const newArray = prevState.groceryItems.map(obj => obj);
+                newArray.push(newItem);
+                return ({ groceryItems: newArray });
 
-        });
-
+            });
+        }
+        document.getElementById('input-field').value = '';
     }
 
     render() {
